@@ -1,6 +1,15 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
+interface CardBodyProps {
+    title: String;
+    bodyText: String;
+}
+interface CardProps {
+    children: ReactNode; // children se usa para pasar otro componente
+}
 
-function Card() {
+function Card(props: CardProps) {
+    const { children: body } = props;
+    //otra forma de dart estilos al componente
     const cardStyle: CSSProperties = {
         width: "350px",
         margin: "10px",
@@ -8,21 +17,17 @@ function Card() {
 
     return (
         <div className="card" style={cardStyle}>
-            <div className="card-body">
-                <CardBody />
-            </div>
+            <div className="card-body">{body}</div>
         </div>
     );
 }
 
-function CardBody() {
+export function CardBody(props: CardBodyProps) {
+    const { title, bodyText } = props;
     return (
         <>
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">Some quick text as example here</p>
-            <a href="" className="btn btn-primary">
-                Go somewhere
-            </a>
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">{bodyText}</p>
         </>
     );
 }
