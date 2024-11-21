@@ -17,17 +17,19 @@ function List({ data, onSelect }: Props) {
 
     return (
         <ul className="list-group">
-            {data.map((d, index) => (
-                <li
-                    onClick={() => handleClick(d, index)}
-                    key={d}
-                    className={`list-group-item ${
-                        selected == index ? "active" : ""
-                    }`}
-                >
-                    {index + 1}. {d}
-                </li>
-            ))}
+            {List.length
+                ? data.map((d, index) => (
+                      <li
+                          onClick={() => handleClick(d, index)}
+                          key={d}
+                          className={`list-group-item ${
+                              selected == index ? "active" : ""
+                          }`}
+                      >
+                          {index + 1}. {d}
+                      </li>
+                  ))
+                : "No hay nada para mostrar"}
         </ul>
     );
 }
