@@ -15,9 +15,11 @@ function List({ data, onSelect }: Props) {
         onSelect?.(e);
     };
 
+    let hasData: boolean = List.length > 0;
+
     return (
         <ul className="list-group">
-            {List.length
+            {hasData
                 ? data.map((d, index) => (
                       <li
                           onClick={() => handleClick(d, index)}
