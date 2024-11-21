@@ -2,16 +2,17 @@ import { useState } from "react";
 
 type Props = {
     data: string[];
+    onSelect?: (e: string) => void;
 };
 
-function List({ data }: Props) {
+function List({ data, onSelect }: Props) {
     //state hook
     // regresa el valor seleccionado y la funcion para modificarlo
     // se inicializa en -1 para que no tenga ninguno seleccionado
     const [selected, setIndex] = useState(-1);
     const handleClick = (e: string, index: number) => {
         setIndex(index);
-        console.log(e);
+        onSelect?.(e);
     };
 
     return (
