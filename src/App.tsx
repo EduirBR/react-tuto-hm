@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "./components/button";
+import Button from "./components/Button";
 import Card, { CardBody } from "./components/Card";
 import List from "./components/List";
 

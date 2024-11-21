@@ -1,7 +1,7 @@
 import { CSSProperties, useState } from "react";
 import Card, { CardBody } from "./components/Card";
 import List from "./components/List";
-import Button from "./components/button";
+import Button from "./components/Button";
 
 function App2() {
     const [minionsList, setState] = useState(["Kamado"]);

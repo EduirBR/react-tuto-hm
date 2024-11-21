@@ -1,5 +1,5 @@
 import { CSSProperties, MouseEventHandler } from "react";
-
+import "./Button.css";
 interface ButtonProps {
     func: MouseEventHandler;
     clicked?: boolean;
