@@ -1,5 +1,5 @@
 import { CSSProperties, MouseEventHandler } from "react";
-import "./Button.css";
+import styles from "./Button.module.css";
 interface ButtonProps {
     func: MouseEventHandler;
     clicked?: boolean;
@@ -14,11 +14,12 @@ function Button({ func, clicked, typeClass }: ButtonProps) {
         // display: "flex",
         // justifyContent: "center",
     };
-
+    console.log(styles);
     return (
         <div style={cssStyle}>
             <button
-                className={`btn ${typeClass.class}`}
+                // className={`btn ${typeClass.class}`}
+                className={[styles.button, styles.padded].join(" ")}
                 onClick={func}
                 disabled={clicked}
             >
